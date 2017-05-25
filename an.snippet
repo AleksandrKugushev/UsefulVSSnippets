@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>argument null check</Title>
+			<Shortcut>an</Shortcut>
+			<Description>Code snippet for checking a parameter for null and throwing an ArgumentNullException</Description>
+			<Author>Aleksandr Kugushev</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>parametername</ID>
+					<ToolTip>Parameter to do the null check for</ToolTip>
+					<Default>parameterToCheck</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[if ($parametername$ == null) throw new ArgumentNullException(nameof($parametername$));
+		$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

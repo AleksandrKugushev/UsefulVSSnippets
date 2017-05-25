@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>test enviroment</Title>
+			<Shortcut>testenv</Shortcut>
+			<Description>Code snippet for creating test enviroment uising Nunit</Description>
+			<Author>Aleksandr Kugushev</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>testobject</ID>
+					<ToolTip>Testable object</ToolTip>
+					<Default>Object</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[#region Enviroment
+
+        class Dependencies
+        {
+
+        }
+        private Dependencies D { get; set; }
+
+        public $testobject$ O => new $testobject$();
+
+
+        [SetUp]
+        public void SetUp()
+        {
+            D = new Dependencies();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            D = null;
+        }
+
+        #endregion
+		$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

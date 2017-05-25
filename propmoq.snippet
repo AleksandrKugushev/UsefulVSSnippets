@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>property with Mock object</Title>
+			<Shortcut>propmoq</Shortcut>
+			<Description>Code snippet for creating properties with instances of Moq.Mock</Description>
+			<Author>Aleksandr Kugushev</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>typename</ID>
+					<ToolTip>Name of mockable class</ToolTip>
+					<Default>Object</Default>
+				</Literal>
+				<Object>
+					<ID>propertyname</ID>
+					<ToolTip>Name property</ToolTip>
+					<Default>Obj</Default>
+				</Object>
+			</Declarations>
+			<Code Language="csharp">
+				<![CDATA[public Mock<$typename$> $propertyname$ { get; } = new Mock<$typename$>();$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
